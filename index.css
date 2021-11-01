@@ -152,6 +152,7 @@ body {
   flex-direction: column;
   -webkit-box-shadow: 7px 8px 0px 5px rgba(208, 228, 255, 0.39);
   box-shadow: 0px 9px 80px 20px rgba(208, 228, 255, 0.4);
+  overflow: hidden;
 }
 
 .main-img {
@@ -201,7 +202,8 @@ main {
 }
 
 .share-info {
-  display: flex;
+  display: none;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
@@ -209,21 +211,35 @@ main {
 }
 
 .share-info img {
-  display: flex;
+  /* display: flex; */
   border-radius: 50%;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
 }
 
 .name-n-date {
-  display: flex;
+  /* display: flex; */
   width: max-content;
   flex-direction: column;
   line-height: 1.25rem;
-  padding-right: 3rem;
+  padding-right: 1rem;
 }
 
-button.share-button {
+.share-active {
+  display: flex;
+  color: hsl(214, 17%, 51%);
+  align-items: center;
+  background-color: hsl(217, 19%, 35%);
+  width: 100%;
+  height: 4.5rem;
+  font-weight: 700;
+  padding: 1rem;
+  padding-right: 2rem;
+  letter-spacing: 0.3rem;
+  font-size: small;
+}
+
+.share-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,15 +251,41 @@ button.share-button {
   margin-right: 0.25rem;
 }
 
-.share-button:hover {
-  background-color: hsl(217, 19%, 35%);
+.share-active a {
+  padding: 0.5rem;
 }
 
-/* Share Button Inner Arrow */
+#FacebookLink {
+  padding-left: 0.5rem;
+}
 
-.share-button svg path:hover {
+.hidden-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(210, 46%, 95%);
+  border-radius: 50%;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-style: hidden;
+  margin-right: 0.25rem;
+  background-color: hsl(214, 17%, 51%);
+}
+
+.hidden-active svg path {
   fill: white;
 }
+
+.tooltiptext {
+  display: none;
+}
+
+/*CODE FOR WHEN ACTIVATED*/
+.hide-active {
+  display: flex;
+}
+
+/* MY CODE ABOVE*/
 
 .attribution {
   padding-top: 0.5rem;
@@ -252,44 +294,73 @@ button.share-button {
 @media only screen and (min-width: 1140px) {
   /*Desktop Design [>= 1140px]*/
   .img-container {
-    max-width: 40%;
+    width: 100%;
     display: flex;
   }
   .main-content {
     flex-direction: row;
-    max-width: 60%;
+    max-width: 65%;
+  }
+
+  main {
+    padding-left: 2.5rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  .paragraph-container {
+    /* padding-left: 0.5rem; */
   }
   .name-n-date {
-    padding-right: 9rem;
+    padding-right: 11.75rem;
   }
   .share-info {
     padding-top: 0%;
     padding-bottom: 0.5rem;
   }
+
+  #avatar-pic {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+
   button.share-button {
-    margin: 0%;
+    width: 2.25rem;
+    height: 2.25rem;
   }
   body {
     max-height: 33%;
   }
   h1 {
-    font-size: larger;
+    font-size: x-large;
+    line-height: 2rem;
   }
   p.main-paragraph {
-    margin-right: 0.75rem;
+    font-size: medium;
+    line-height: 1.5rem;
+    padding-right: 0rem;
   }
 
+  .share-info {
+    display: flex;
+    padding-right: 1rem;
+  }
+
+  .share-active {
+    display: none;
+  }
   /* Tool Tip  */
   /* Tooltip container */
   .tooltip {
     position: relative;
-    display: inline-block;
+    display: none;
+    visibility: visible;
   }
   /* Tooltip text */
   .tooltip .tooltiptext {
-    visibility: hidden;
+    visibility: visible;
     width: 120px;
-    background-color: #555;
+    background-color: hsl(217, 19%, 35%);
     color: #fff;
     text-align: center;
     padding: 5px 0;
@@ -306,27 +377,15 @@ button.share-button {
     transition: opacity 0.3s;
   }
 
-  /* Tooltip text */
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
+  /* .share-button:hover { */
+  /* background-color: hsl(217, 19%, 35%); */
+  /* } */
 
-    /* Position the tooltip text */
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
+  /* Share Button Inner Arrow */
 
-    /* Fade in tooltip */
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
+  /* .share-button svg path:hover { */
+  /* fill: white; */
+  /* } */
 
   /* Tooltip arrow */
   .tooltip .tooltiptext::after {
