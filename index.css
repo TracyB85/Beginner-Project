@@ -178,7 +178,7 @@ p {
   /* font-weight: 500; */
   font-size: 13px;
   text-align: left;
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 }
 
 a {
@@ -199,6 +199,7 @@ main {
 .paragraph-container {
   display: flex;
   flex-direction: column;
+  margin-right: -0.2rem;
 }
 
 .share-info {
@@ -297,51 +298,72 @@ main {
 @media only screen and (min-width: 1140px) {
   /*Desktop Design [>= 1140px]*/
 
-  .img-container {
-    min-width: 40%;
-    display: flex;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    overflow: hidden;
+  body {
+    padding: 0%;
   }
+
   .main-content {
     flex-direction: row;
-    max-width: 55%;
+    max-width: 42vw;
+    max-height: 37vh;
     overflow: visible;
     border-radius: 9px;
   }
 
+  .img-container {
+    display: flex;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    overflow: hidden;
+    min-width: 40%;
+  }
+
   main {
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    min-width: 60%;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    min-width: 54%;
+  }
+
+  .paragraph-container {
+    line-height: 0.5rem;
   }
 
   h1 {
-    font-size: larger;
+    line-height: 1.25rem;
+    font-weight: 700;
   }
 
-  .name-n-date {
-    padding-left: 1rem;
-  }
-  .share-info {
-    padding-top: 0%;
-    padding-bottom: 0.5rem;
+  .main-paragraph {
+    line-height: 1rem;
+    font-size: 10px;
   }
 
   #avatar-pic {
-    height: 2.75rem;
-    width: 2.75rem;
-  }
-
-  button.share-button {
-    width: 2.25rem;
-    height: 2.25rem;
+    height: 1.8rem;
+    width: 1.8rem;
   }
 
   .share-info {
     display: flex;
-    padding-right: 1rem;
+    padding-right: 0rem;
+    padding-top: 0%;
+    font-size: x-small;
+  }
+
+  .name-n-date {
+    line-height: 1rem;
+    font-weight: 700;
+    padding-right: 7rem;
+  }
+
+  p {
+    font-weight: 500;
+  }
+
+  .share-icon {
+    /* padding-right: 1rem; */
   }
 
   .share-active {
@@ -350,7 +372,7 @@ main {
 
   .mytooltip {
     position: relative;
-    display: flex;
+    display: none;
     justify-content: center;
     font-family: "Manrope", sans-serif;
     font-size: small;
